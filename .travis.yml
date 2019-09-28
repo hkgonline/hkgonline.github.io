@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+  - node_modules
+  yarn: true
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  local_dir: public
+  keep-history: true
+  target-branch: master
+  on:
+    branch: develop
+before_cache:
+  - cp -f yarn.lock node_modules/yarn.lock || echo "fail to cache yarn.lock"
+before_install:
+  - cp -f node_modules/yarn.lock yarn.lock || echo "no cached yarn.lock"
+install:
+  - yarn
+script:
+  - yarn build
