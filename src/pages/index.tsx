@@ -1,5 +1,8 @@
+import { Box } from '@material-ui/core'
 import { graphql } from 'gatsby'
 import React from 'react'
+import { Helmet } from 'react-helmet'
+import DurationLabel from '../components/DurationLabel'
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -22,7 +25,20 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
-  return <h1>{data.site.siteMetadata.title}</h1>
+  return (
+    <Box
+      display="flex"
+      height="100vh"
+      alignItems="center"
+      justifyContent="center"
+      pb={5}
+    >
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+      </Helmet>
+      <DurationLabel />
+    </Box>
+  )
 }
 
 export default IndexPage
