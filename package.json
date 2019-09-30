@@ -15,15 +15,14 @@
     "gatsby": "^2.15.28",
     "lodash": "^4.17.15",
     "react": "^16.10.1",
-    "react-countup": "^4.2.2",
     "react-dom": "^16.10.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-spring": "^9.0.0-beta.34"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.141",
     "@types/node": "^12.7.8",
     "@types/react": "^16.9.3",
-    "@types/react-countup": "^4.0.1",
     "@types/react-dom": "^16.9.1",
     "@types/react-helmet": "^5.0.11",
     "gatsby-plugin-typescript": "^2.1.11",
