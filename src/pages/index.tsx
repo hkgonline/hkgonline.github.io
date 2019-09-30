@@ -1,5 +1,5 @@
-import { Box } from '@material-ui/core'
-import { graphql } from 'gatsby'
+import { Box, Button } from '@material-ui/core'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import DurationLabel from '../components/DurationLabel'
@@ -36,7 +36,14 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
       </Helmet>
-      <DurationLabel />
+      <Box textAlign="center">
+        <DurationLabel />
+        <Box mt={2}>
+          <Button variant="outlined" component={Link} to="/action">
+            兄弟爬山
+          </Button>
+        </Box>
+      </Box>
     </Box>
   )
 }
