@@ -1,6 +1,7 @@
-import { Box, Button, Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { FacebookButton, TelegramButton } from '../components/ExternalLinkButton'
 
 const ActionPage: React.FC = () => {
   const title = '逆權活動'
@@ -15,16 +16,7 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">Bye Buy Day</Typography>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/byebuydaychannel"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: byebuydaychannel
-          </Button>
+          <TelegramButton tgid="byebuydaychannel" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -32,50 +24,14 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">抵制 TVB</Typography>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://facebook.com/banTVB"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            FB: noTVB
-          </Button>
+          <FacebookButton fbid="noTVB" />
           &nbsp;
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/noTVB"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: noTVB
-          </Button>
+          <TelegramButton tgid="noTVB" />
         </Box>
         <Box mt={1}>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://facebook.com/sayno2tvb"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            FB: sayno2tvb
-          </Button>
+          <FacebookButton fbid="sayno2tvb" />
           &nbsp;
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/sayno2tvb"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: sayno2tvb
-          </Button>
+          <TelegramButton tgid="sayno2tvb" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -83,16 +39,7 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">Twitter 每日任務</Typography>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/twitter4HK"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: twitter4HK
-          </Button>
+          <TelegramButton tgid="twitter4HK" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -100,28 +47,10 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">香港臨時議會</Typography>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/hkpporganizationchannel"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: hkpporganizationchannel
-          </Button>
+          <TelegramButton tgid="hkpporganizationchannel" />
         </Box>
         <Box mt={1}>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/hkassembly"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: hkassembly
-          </Button>
+          <TelegramButton tgid="hkassembly" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -129,27 +58,9 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">全港連儂牆</Typography>
         </Box>
         <Box>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/lennonwallhk"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: lennonwallhk
-          </Button>
+          <TelegramButton tgid="lennonwallhk" />
           &nbsp;
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            href="https://t.me/Lennonovazed_channel"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TG: Lennonovazed_channel
-          </Button>
+          <TelegramButton tgid="Lennonovazed_channel" />
         </Box>
       </Box>
     </Box>
