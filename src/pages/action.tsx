@@ -1,7 +1,10 @@
 import { Box, Typography } from '@material-ui/core'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { FacebookButton, TelegramButton } from '../components/ExternalLinkButton'
+import {
+  FacebookButton,
+  TelegramButton,
+} from '../components/ExternalLinkButton'
 
 const ActionPage: React.FC = () => {
   const title = '逆權活動'
@@ -48,9 +51,8 @@ const ActionPage: React.FC = () => {
         </Box>
         <Box>
           <TelegramButton tgid="hkpporganizationchannel" />
-        </Box>
-        <Box mt={1}>
-          <TelegramButton tgid="hkassembly" />
+          &nbsp;
+          <TelegramButton tgid="hkassembly" variant="chat" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -58,9 +60,9 @@ const ActionPage: React.FC = () => {
           <Typography variant="h4">全港連儂牆</Typography>
         </Box>
         <Box>
-          <TelegramButton tgid="lennonwallhk" />
-          &nbsp;
           <TelegramButton tgid="Lennonovazed_channel" />
+          &nbsp;
+          <TelegramButton tgid="lennonwallhk" variant="chat" />
         </Box>
       </Box>
     </Box>

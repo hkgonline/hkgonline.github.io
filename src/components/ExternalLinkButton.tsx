@@ -33,10 +33,13 @@ export const FacebookButton = React.forwardRef<
 
 export const TelegramButton = React.forwardRef<
   HTMLAnchorElement,
-  ButtonProps<'a'> & { tgid: string }
->(({ children, tgid, ...props }) => {
+  ButtonProps<'a'> & { tgid: string; variant?: 'channel' | 'chat' }
+>(({ children, tgid, variant = 'channel', ...props }) => {
+  const color = variant === 'chat' ? `secondary` : `primary`
+  const url =
+    variant === 'chat' ? `https://t.me/${tgid}` : `https://t.me/s/${tgid}`
   return (
-    <ExternalLinkButton {...props} href={`https://t.me/${tgid}`}>
+    <ExternalLinkButton color={color} {...props} href={url}>
       <TelegramIcon /> {tgid}
     </ExternalLinkButton>
   )
