@@ -42,6 +42,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
           <Button variant="outlined" component={Link} to="/action">
             兄弟爬山
           </Button>
+          &nbsp;
+          <Button variant="outlined" component={Link} to="/support">
+            齊上齊落
+          </Button>
         </Box>
       </Box>
     </Box>
