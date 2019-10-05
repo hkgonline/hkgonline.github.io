@@ -39,7 +39,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       <Box textAlign="center">
         <DurationLabel />
         <Box mt={2}>
-          <Button variant="outlined" component={Link} to="/action">
+          <Button variant="outlined" component={Link} to="/activities">
             兄弟爬山
           </Button>
           &nbsp;

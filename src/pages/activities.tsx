@@ -6,7 +6,7 @@ import {
   TelegramButton,
 } from '../components/ExternalLinkButton'
 
-const ActionPage: React.FC = () => {
+const ActivitiesPage: React.FC = () => {
   const title = '逆權活動'
 
   return (
@@ -69,4 +69,4 @@ const ActionPage: React.FC = () => {
   )
 }
 
-export default ActionPage
+export default ActivitiesPage
