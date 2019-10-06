@@ -52,7 +52,7 @@ const ActivitiesPage: React.FC = () => {
         <Box>
           <TelegramButton tgid="hkpporganizationchannel" />
           &nbsp;
-          <TelegramButton tgid="hkassembly" variant="chat" />
+          <TelegramButton tgid="hkassembly" to="chat" />
         </Box>
       </Box>
       <Box component="section" m={2} mb={4}>
@@ -62,7 +62,7 @@ const ActivitiesPage: React.FC = () => {
         <Box>
           <TelegramButton tgid="Lennonovazed_channel" />
           &nbsp;
-          <TelegramButton tgid="lennonwallhk" variant="chat" />
+          <TelegramButton tgid="lennonwallhk" to="chat" />
         </Box>
       </Box>
     </Box>
