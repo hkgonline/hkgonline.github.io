@@ -1,0 +1,23 @@
+- title: Bye Buy Day
+  telegram:
+    - id: byebuydaychannel
+- title: 抵制 TVB
+  facebook:
+    - id: noTVB
+    - id: sayno2tvb
+  telegram:
+    - id: noTVB
+    - id: sayno2tvbÎ
+- title: Twitter 每日任務
+  telegram:
+    - id: twitter4HK
+- title: 香港臨時議會
+  telegram:
+    - id: hkpporganizationchannel
+    - id: hkassembly
+      to: chat
+- title: 全港連儂牆
+  telegram:
+    - id: Lennonovazed_channel
+    - id: lennonwallhk
+      to: chat

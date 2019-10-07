@@ -1,4 +1,5 @@
 import { Box, Typography } from '@material-ui/core'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import {
@@ -8,63 +9,57 @@ import {
 
 const ActivitiesPage: React.FC = () => {
   const title = '逆權活動'
+  const data = useStaticQuery(graphql`
+    query ActivitiesQuery {
+      allActivitiesYaml {
+        nodes {
+          id
+          title
+          facebook {
+            id
+          }
+          telegram {
+            id
+            to
+          }
+        }
+      }
+    }
+  `)
+  const activities = data.allActivitiesYaml.nodes
 
   return (
     <Box>
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <Box component="section" m={2} mb={4}>
-        <Box component="header" mb={1}>
-          <Typography variant="h4">Bye Buy Day</Typography>
+      {activities.map(o => (
+        <Box key={o.id} component="section" m={2} mb={4}>
+          <Box component="header" mb={1}>
+            <Typography variant="h4">{o.title}</Typography>
+          </Box>
+          {o.facebook && (
+            <Box mt={1}>
+              {o.facebook.map(x => (
+                <Box component={FacebookButton} key={x.id} fbid={x.id} mr={1} />
+              ))}
+            </Box>
+          )}
+          {o.telegram && (
+            <Box mt={1}>
+              {o.telegram.map(x => (
+                <Box
+                  component={TelegramButton}
+                  key={x.id}
+                  tgid={x.id}
+                  to={x.to ? x.to : 'channel'}
+                  mr={1}
+                />
+              ))}
+            </Box>
+          )}
         </Box>
-        <Box>
-          <TelegramButton tgid="byebuydaychannel" />
-        </Box>
-      </Box>
-      <Box component="section" m={2} mb={4}>
-        <Box component="header" mb={1}>
-          <Typography variant="h4">抵制 TVB</Typography>
-        </Box>
-        <Box>
-          <FacebookButton fbid="noTVB" />
-          &nbsp;
-          <TelegramButton tgid="noTVB" />
-        </Box>
-        <Box mt={1}>
-          <FacebookButton fbid="sayno2tvb" />
-          &nbsp;
-          <TelegramButton tgid="sayno2tvb" />
-        </Box>
-      </Box>
-      <Box component="section" m={2} mb={4}>
-        <Box component="header" mb={1}>
-          <Typography variant="h4">Twitter 每日任務</Typography>
-        </Box>
-        <Box>
-          <TelegramButton tgid="twitter4HK" />
-        </Box>
-      </Box>
-      <Box component="section" m={2} mb={4}>
-        <Box component="header" mb={1}>
-          <Typography variant="h4">香港臨時議會</Typography>
-        </Box>
-        <Box>
-          <TelegramButton tgid="hkpporganizationchannel" />
-          &nbsp;
-          <TelegramButton tgid="hkassembly" to="chat" />
-        </Box>
-      </Box>
-      <Box component="section" m={2} mb={4}>
-        <Box component="header" mb={1}>
-          <Typography variant="h4">全港連儂牆</Typography>
-        </Box>
-        <Box>
-          <TelegramButton tgid="Lennonovazed_channel" />
-          &nbsp;
-          <TelegramButton tgid="lennonwallhk" to="chat" />
-        </Box>
-      </Box>
+      ))}
     </Box>
   )
 }
