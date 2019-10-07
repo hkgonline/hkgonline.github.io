@@ -50,7 +50,7 @@ const ActivitiesPage: React.FC = () => {
           {o.telegram && (
             <Box mt={1}>
               {o.telegram.map(x => (
-                <Box key={x.id} mr={1} clone>
+                <Box key={x.id} mt={1} mr={1} clone>
                   <TelegramButton tgid={x.id} to={x.to ? x.to : 'channel'} />
                 </Box>
               ))}

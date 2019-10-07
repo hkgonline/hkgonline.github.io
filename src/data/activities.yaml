@@ -13,11 +13,15 @@
 - title: Twitter 每日任務
   frequency: daily
   telegram:
+    - id: twittermansyunzou
     - id: twitter4HK
+      to: chat
 - title: 香港臨時議會
   frequency: daily
   telegram:
+    - id: hkvote
     - id: hkpporganizationchannel
+      to: chat
     - id: hkassembly
       to: chat
 - title: 全港連儂牆
@@ -26,5 +30,10 @@
     - id: Lennonovazed_channel
     - id: lennonwallhk
       to: chat
+    - id: WallPaperENews
+    - id: hkstandstrong_promo
+    - id: hkstandstrong_promo_int
+    - id: hkposter777
+    - id: hongkongstandstrong_live
 - title: 全民口罩日
   frequency: daily
