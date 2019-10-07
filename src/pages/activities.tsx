@@ -41,20 +41,18 @@ const ActivitiesPage: React.FC = () => {
           {o.facebook && (
             <Box mt={1}>
               {o.facebook.map(x => (
-                <Box component={FacebookButton} key={x.id} fbid={x.id} mr={1} />
+                <Box key={x.id} mr={1} clone>
+                  <FacebookButton fbid={x.id} />
+                </Box>
               ))}
             </Box>
           )}
           {o.telegram && (
             <Box mt={1}>
               {o.telegram.map(x => (
-                <Box
-                  component={TelegramButton}
-                  key={x.id}
-                  tgid={x.id}
-                  to={x.to ? x.to : 'channel'}
-                  mr={1}
-                />
+                <Box key={x.id} mr={1} clone>
+                  <TelegramButton tgid={x.id} to={x.to ? x.to : 'channel'} />
+                </Box>
               ))}
             </Box>
           )}

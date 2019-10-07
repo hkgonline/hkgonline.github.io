@@ -7,7 +7,7 @@
     - id: sayno2tvb
   telegram:
     - id: noTVB
-    - id: sayno2tvbÎ
+    - id: sayno2tvb
 - title: Twitter 每日任務
   telegram:
     - id: twitter4HK
