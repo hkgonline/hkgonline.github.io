@@ -7,9 +7,10 @@ import React from 'react'
 const ExternalLinkButton = React.forwardRef<
   HTMLAnchorElement,
   ButtonProps<'a'>
->(props => {
+>((props, ref) => {
   return (
     <Button
+      ref={ref}
       variant="contained"
       color="primary"
       target="_blank"
@@ -23,9 +24,13 @@ const ExternalLinkButton = React.forwardRef<
 export const FacebookButton = React.forwardRef<
   HTMLAnchorElement,
   ButtonProps<'a'> & { fbid: string }
->(({ children, fbid, ...props }) => {
+>(({ children, fbid, ...props }, ref) => {
   return (
-    <ExternalLinkButton {...props} href={`https://facebook.com/${fbid}`}>
+    <ExternalLinkButton
+      ref={ref}
+      {...props}
+      href={`https://facebook.com/${fbid}`}
+    >
       <FacebookIcon /> {fbid}
     </ExternalLinkButton>
   )
@@ -34,11 +39,11 @@ export const FacebookButton = React.forwardRef<
 export const TelegramButton = React.forwardRef<
   HTMLAnchorElement,
   ButtonProps<'a'> & { tgid: string; to?: 'channel' | 'chat' }
->(({ children, tgid, to = 'channel', ...props }) => {
+>(({ children, tgid, to = 'channel', ...props }, ref) => {
   const color = to === 'chat' ? `secondary` : `primary`
   const url = to === 'chat' ? `https://t.me/${tgid}` : `https://t.me/s/${tgid}`
   return (
-    <ExternalLinkButton color={color} {...props} href={url}>
+    <ExternalLinkButton ref={ref} color={color} {...props} href={url}>
       <TelegramIcon /> {tgid}
     </ExternalLinkButton>
   )
