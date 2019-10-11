@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import DurationLabel from '../components/DurationLabel'
+import GloryBackground from '../components/GloryBackground'
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -31,12 +32,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       height="100vh"
       alignItems="center"
       justifyContent="center"
-      pb={5}
+      pb={4}
     >
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
       </Helmet>
-      <Box textAlign="center">
+      <GloryBackground />
+      <Box textAlign="center" zIndex={1}>
         <DurationLabel />
         <Box mt={2}>
           <Button variant="outlined" component={Link} to="/activities">
