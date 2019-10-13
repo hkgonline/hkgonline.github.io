@@ -1,6 +1,8 @@
 import { Box, Fab, Link } from '@material-ui/core'
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
+import { graphql, useStaticQuery } from 'gatsby'
+import _ from 'lodash'
 import normalizeUrl from 'normalize-url'
 import React from 'react'
 import Player from 'react-player'
@@ -8,7 +10,16 @@ import Player from 'react-player'
 const GloryBackground: React.FC = () => {
   const [playing, setPlaying] = React.useState(true)
   const [canPause, setCanPause] = React.useState(false)
-  const url = 'https://www.youtube.com/watch?v=oUIDL4SB60g'
+  const data = useStaticQuery(graphql`
+    query GloryQuery {
+      allGloryYaml {
+        nodes {
+          url
+        }
+      }
+    }
+  `)
+  const { url } = _.sample(data.allGloryYaml.nodes)
 
   return (
     <Box position="absolute" top={0} left={0} width="100%" height="100%">
