@@ -6,6 +6,7 @@ import _ from 'lodash'
 import normalizeUrl from 'normalize-url'
 import React from 'react'
 import Player from 'react-player'
+import { computeDays } from './DurationLabel'
 
 const GloryBackground: React.FC = () => {
   const [playing, setPlaying] = React.useState(true)
@@ -19,7 +20,8 @@ const GloryBackground: React.FC = () => {
       }
     }
   `)
-  const { url } = _.sample(data.allGloryYaml.nodes)
+  const gloryList = data.allGloryYaml.nodes
+  const { url } = gloryList[computeDays() % gloryList.length]
 
   return (
     <Box position="absolute" top={0} left={0} width="100%" height="100%">

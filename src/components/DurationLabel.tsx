@@ -3,10 +3,14 @@ import { differenceInDays } from 'date-fns'
 import React from 'react'
 import { animated, useSpring } from 'react-spring'
 
-const DurationLabel: React.FC = () => {
+export const computeDays = () => {
   const startDate = new Date(2019, 5, 9)
+  return differenceInDays(new Date(), startDate) + 1
+}
+
+const DurationLabel: React.FC = () => {
   const { days } = useSpring({
-    days: differenceInDays(new Date(), startDate) + 1,
+    days: computeDays(),
     from: { days: 0 },
   })
   return (
