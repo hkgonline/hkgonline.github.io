@@ -1,6 +1,7 @@
 import { Box, Fab, Link } from '@material-ui/core'
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
+import normalizeUrl from 'normalize-url'
 import React from 'react'
 import Player from 'react-player'
 
@@ -23,15 +24,18 @@ const GloryBackground: React.FC = () => {
         display="flex"
         alignItems="flex-end"
         justifyContent="flex-end"
+        color="gray"
       >
-        <Link
-          href={url}
-          rel="noopener noreferrer"
-          target="_blank"
-          color="inherit"
-        >
-          {url}
-        </Link>
+        <Box display="inline-block" m={1}>
+          <Link
+            href={url}
+            rel="noopener noreferrer"
+            target="_blank"
+            color="inherit"
+          >
+            {normalizeUrl(url, { stripProtocol: true })}
+          </Link>
+        </Box>
         <Fab
           size="small"
           onClick={() => {
