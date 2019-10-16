@@ -24,7 +24,14 @@ const GloryBackground: React.FC = () => {
   const { url } = gloryList[computeDays() % gloryList.length]
 
   return (
-    <Box position="absolute" top={0} left={0} width="100%" height="100%">
+    <Box
+      position="absolute"
+      top={0}
+      left={0}
+      width="100%"
+      height="100%"
+      overflow="hidden"
+    >
       <Box
         position="absolute"
         width="100%"
